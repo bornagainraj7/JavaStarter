@@ -1,7 +1,10 @@
 package oops;
 
-abstract class Car { // you cannot create objet of abstract class
-    // abtract class can have both normal or abstract method
+abstract class Car { // you cannot create object of abstract class
+    // abstract class can have both normal or abstract method
+    Car() {
+        System.out.println("Inside Abstract default constructor");
+    }
     public abstract void drive(); // abstract method can only be in abstract class
     public void playMusic() {
         System.out.println("Playing Music inside Car");

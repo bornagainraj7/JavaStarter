@@ -1,6 +1,6 @@
 package oops;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
+//import com.sun.org.apache.xpath.internal.operations.Bool;
 
 class CalcDemo { // once the class is final no one can inherit it
     public final void show() { // no one can override final method

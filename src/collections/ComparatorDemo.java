@@ -1,9 +1,6 @@
 package collections;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 class Student implements Comparable<Student> {
     int age;
@@ -39,6 +36,7 @@ class Student implements Comparable<Student> {
 public class ComparatorDemo {
     public static void main(String[] args) {
         List<Integer> nums = new ArrayList<>();
+        List<Integer> numList = Arrays.asList(1, 5, 9, 3, 2);
         nums.add(33);
         nums.add(71);
         nums.add(18);
@@ -59,6 +57,8 @@ public class ComparatorDemo {
         Collections.sort(nums, com);
         System.out.println("Sorted: " + nums);
 
+
+
         List<Student> studs = new ArrayList<>();
         studs.add(new Student(21, "Prabhakar"));
         studs.add(new Student(17, "Ramesh"));
@@ -78,6 +78,15 @@ public class ComparatorDemo {
         };
 
         System.out.println(studs);
+        Collections.sort(studs, studentComparator);
+        System.out.println(studs);
+
+        // the above comparator can also be implemented using lambda
+        Comparator<Student> compareStudents = (s1, s2) -> s1.age - s2.age;
+
+        // if s1.age is less than s2.age, s1 will be present first else s2 will be present first
+        // it means if s1.age - s2.age returns negative value s1 will come first else s2 will come first
+
         Collections.sort(studs, studentComparator);
         System.out.println(studs);
 

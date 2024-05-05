@@ -10,6 +10,9 @@ class Mobile {
         // Class is loaded only once and while class is loaded static block is executed, so static block is executed only once
         System.out.println("Inside static block");
         name = "Phone";
+        Mobile obj3 = new Mobile();
+        obj3.brand = "Oppo";
+        System.out.println(obj3.brand);
     }
 
     public Mobile() {
@@ -26,12 +29,24 @@ class Mobile {
         System.out.println(obj.brand + " : " + obj.price + " : " + name);
     }
 
+    static class Smartphone {
+//        Mobile obj;
+//        Smartphone(Mobile obj) {
+//            this.obj = obj;
+//        }
+        void display() {
+            System.out.println(name);
+//            System.out.println(obj.brand);
+        }
+    }
+
 }
 
 public class StaticDemo {
     public static void main(String[] args) throws ClassNotFoundException {
         // loading class without creating any object
-        // Class.forName("Mobile"); // but this throws error mostly
+//         Class.forName(Mobile.class.getName());
+//        System.out.println(Mobile.name);
         // System.out.println(".........");
 
         // so if we dont create any object class is not loaded and hence static block is not executed
@@ -39,15 +54,18 @@ public class StaticDemo {
         obj1.brand = "Apple";
         obj1.price = 1500;
         obj1.name = "Smartphone";
+        System.out.println(obj1.name);
+        System.out.println(Mobile.name);
 
         Mobile obj2 = new Mobile();
         obj2.brand = "Samsung";
         obj2.price = 1700;
 
-        Mobile.name = "Phone";
+        Mobile.name = "NotSmartPhone";
 
+        System.out.println(Mobile.name);
         Mobile.show(obj1);
 
-
+//        System.out.println(Mobile.Smartphone);
     }
 }
